@@ -5,13 +5,13 @@
       "id": "aufstieg",
       "titel": "Aufstieg",
       "beschreibung": "Fußball-Manager: vom Kreisligisten zum Europapokalsieger.",
-      "version": "0.16.0",
-      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.16.0/aufstieg-0.16.0.zip",
-      "groesse": 337901,
-      "sha256": "ed60eb1e53134cf53500aef0a49838f956bfcc9d32b0aeb3c54bebea39339606",
-      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.16.0/aufstieg-bild.png",
+      "version": "0.18.0",
+      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.18.0/aufstieg-0.18.0.zip",
+      "groesse": 346287,
+      "sha256": "fcb5910e026258e96b8b1328e1cb34ce9a9d48e7ab9cf6804efb22f4a9423f7a",
+      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.18.0/aufstieg-bild.png",
       "datum": "2026-09-18",
-      "notizen": "Neues Titelbild. Jugend, Training und Verträge sind jetzt übersichtliche Tabellen, sortierbar per Klick auf die Spaltenüberschrift. Das Trainingsbudget zählt jetzt Spieler pro Spieltag statt Euro und reicht damit auch nach Aufstiegen. Behoben: Der Torjäger fehlte meist im Saisonrückblick. Deine Spielstände bleiben erhalten."
+      "notizen": "Neu: Spielerstärken haben feste Farben von Holz bis Diamant. Sponsoren haben Logos, es gibt mehr davon und neue Vertragsarten (Torprämie, Pokalprämie, Zuschauerbonus). Verträge kannst du über 1 bis 3 Saisons abschließen, länger gibt etwas mehr Geld. Dein Trikot zeigt den Brustsponsor. Unter Verein > Gelände siehst du dein Vereinsgelände von oben, ein Klick auf ein Gebäude zeigt die passende Karte. Der Spielbericht ist kompakter, bei Verträgen siehst du die Startelf, und die Tabelle zeigt die Prämie für jeden Platz. Deine Spielstände bleiben erhalten."
     }
   ]
 }
