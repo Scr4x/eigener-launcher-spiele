@@ -5,13 +5,13 @@
       "id": "aufstieg",
       "titel": "Aufstieg",
       "beschreibung": "Fußball-Manager: vom Kreisligisten zum Europapokalsieger.",
-      "version": "0.14.0",
-      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.14.0/aufstieg-0.14.0.zip",
-      "groesse": 51117,
-      "sha256": "7ed95381809f4aab948f70e7bb1bdf87b8705eb19c313569d490ac5573b41eef",
-      "bild": null,
+      "version": "0.16.0",
+      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.16.0/aufstieg-0.16.0.zip",
+      "groesse": 337901,
+      "sha256": "ed60eb1e53134cf53500aef0a49838f956bfcc9d32b0aeb3c54bebea39339606",
+      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.16.0/aufstieg-bild.png",
       "datum": "2026-09-18",
-      "notizen": "Erste Version im Launcher: Starte deine Karriere in der Kreisliga und führe deinen Verein bis nach Europa.\nNeu in 0.14: Turnierbaum mit Finale in der Mitte, übersichtliche Tabellen für Kader und Transfermarkt, Layout für den PC."
+      "notizen": "Neues Titelbild. Jugend, Training und Verträge sind jetzt übersichtliche Tabellen, sortierbar per Klick auf die Spaltenüberschrift. Das Trainingsbudget zählt jetzt Spieler pro Spieltag statt Euro und reicht damit auch nach Aufstiegen. Behoben: Der Torjäger fehlte meist im Saisonrückblick. Deine Spielstände bleiben erhalten."
     }
   ]
 }
