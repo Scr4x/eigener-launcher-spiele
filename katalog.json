@@ -12,6 +12,18 @@
       "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-aufstieg-v0.18.0/aufstieg-bild.png",
       "datum": "2026-09-18",
       "notizen": "Neu: Spielerstärken haben feste Farben von Holz bis Diamant. Sponsoren haben Logos, es gibt mehr davon und neue Vertragsarten (Torprämie, Pokalprämie, Zuschauerbonus). Verträge kannst du über 1 bis 3 Saisons abschließen, länger gibt etwas mehr Geld. Dein Trikot zeigt den Brustsponsor. Unter Verein > Gelände siehst du dein Vereinsgelände von oben, ein Klick auf ein Gebäude zeigt die passende Karte. Der Spielbericht ist kompakter, bei Verträgen siehst du die Startelf, und die Tabelle zeigt die Prämie für jeden Platz. Deine Spielstände bleiben erhalten."
+    },
+    {
+      "id": "rankup",
+      "titel": "RankUP",
+      "beschreibung": "Aimtrainer mit Valorant-Rängen: von Eisen bis Radiant.",
+      "version": "0.7.0",
+      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.7.0/rankup-0.7.0.zip",
+      "groesse": 674463,
+      "sha256": "3fc268ef162b70a930c4f55428ddb4641061b3afb2bf4930107cdacfa80189cc",
+      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.7.0/rankup-bild.png",
+      "datum": "2026-09-19",
+      "notizen": "Schneller und direkter: Treffer-Geräusch und -Kreuz kommen sofort beim Klick, keine Mini-Ruckler mehr bei Treffern.\nMit Launcher 0.3 läuft RankUP mit bis zu 500 FPS: Deine Maus kommt etwa 5 ms schneller im Bild an.\nNeu unter Einstellungen → Grafik → Leistung: FPS-Anzeige mit Details, Grafikstufe „Leistung“ für schwächere PCs, FPS-Grenze und „Niedrige Latenz“ (Test).\nDeine Spielstände, Punkte und Ränge bleiben gleich."
     }
   ]
 }
