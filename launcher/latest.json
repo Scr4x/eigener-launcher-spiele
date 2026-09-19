@@ -1,11 +1,11 @@
 {
-  "version": "0.2.1",
-  "notes": "Neu: Bereich „Entdecken“ – Spiele direkt im Launcher installieren, aktualisieren und deinstallieren.\nNeu: Der Launcher aktualisiert sich selbst.\nNeu: „Was ist neu?“ an jedem Spiel.",
-  "pub_date": "2026-09-18T14:57:39.428Z",
+  "version": "0.3.0",
+  "notes": "Spiele können jetzt ohne Bildraten-Bremse laufen (für schnelle Spiele wie RankUP): mehr FPS und deutlich weniger Verzögerung zwischen Maus und Bild.\nAndere Spiele laufen wie bisher.",
+  "pub_date": "2026-09-19T16:19:32.736Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbzVGSi9hanNvTXRIdEtyeUlhcjRtUlRUeWlVdTNwa090MWpGeUEycS85alBLdmpnR0ZCWGFqRnViWWs3bzNab0RCcHpkQThXYld4ZktLS2hDN2s4VzlNZmdXWCtaWVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NzQyODAzCWZpbGU6RWlnZW5lci1MYXVuY2hlcl8wLjIuMV94NjQtc2V0dXAuZXhlCkZ0WlM2TDdRemcrNzlTcjlXa0NUOGNNbHFSdzRpSXVMamhPY3VCTUdLT0NJZHgyUkhPdEloU0tEQmdqT2huSS9JVXRVV0d2SUx0QlJFNUwveVZBTkF3PT0K",
-      "url": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/launcher-v0.2.1/Eigener-Launcher_0.2.1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbzVGSi9hanNvTXFLeXBuQW5zdTlPL0Y3aEx0MWdiSy9IaExmeTFweEFGL0xkdnROSmM2a1lVdHUrYThLVXlBcU9WTm5DdWZnbkV6Q2ZMYzhHamJ5N1VPbFNTM3M2cndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5ODMyNTk0CWZpbGU6RWlnZW5lci1MYXVuY2hlcl8wLjMuMF94NjQtc2V0dXAuZXhlCjltYjhsM0Jkc2d3d0VoK0pGNnVwaEtqS29DaVVEUUNBRnUvTmp4Qk1YcVZqaVZscGtEcEVzWTJjSzVZZ2tmaXNEaFo3cjhxMVBBOGsxVjhwVjlIc0N3PT0K",
+      "url": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/launcher-v0.3.0/Eigener-Launcher_0.3.0_x64-setup.exe"
     }
   }
 }
