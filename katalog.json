@@ -17,13 +17,13 @@
       "id": "rankup",
       "titel": "RankUP",
       "beschreibung": "Aimtrainer mit Valorant-Rängen: von Eisen bis Radiant.",
-      "version": "0.7.0",
-      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.7.0/rankup-0.7.0.zip",
-      "groesse": 674463,
-      "sha256": "3fc268ef162b70a930c4f55428ddb4641061b3afb2bf4930107cdacfa80189cc",
-      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.7.0/rankup-bild.png",
+      "version": "0.9.0",
+      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.9.0/rankup-0.9.0.zip",
+      "groesse": 681963,
+      "sha256": "c4b9b330c6b339366612aca9f669e7cefd8be0e608ea567b7fa2b35397566938",
+      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.9.0/rankup-bild.png",
       "datum": "2026-09-19",
-      "notizen": "Schneller und direkter: Treffer-Geräusch und -Kreuz kommen sofort beim Klick, keine Mini-Ruckler mehr bei Treffern.\nMit Launcher 0.3 läuft RankUP mit bis zu 500 FPS: Deine Maus kommt etwa 5 ms schneller im Bild an.\nNeu unter Einstellungen → Grafik → Leistung: FPS-Anzeige mit Details, Grafikstufe „Leistung“ für schwächere PCs, FPS-Grenze und „Niedrige Latenz“ (Test).\nDeine Spielstände, Punkte und Ränge bleiben gleich."
+      "notizen": "Neue Übung Counter-Strafe (Kategorie Bewegung): mit WASD laufen, sauber stoppen, im Stand treffen. Gegner peeken mit Anlauf wie in echten Duellen. Neue Übersicht: Kategorien lassen sich auf- und zuklappen, jede Übung steht kompakt in einer Zeile. Flüssiger mit fester Grenze von 240 FPS."
     }
   ]
 }
