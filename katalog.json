@@ -16,14 +16,14 @@
     {
       "id": "rankup",
       "titel": "RankUP",
-      "beschreibung": "Aimtrainer mit Valorant-Rängen: von Eisen bis Radiant.",
-      "version": "0.9.0",
-      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.9.0/rankup-0.9.0.zip",
-      "groesse": 681963,
-      "sha256": "c4b9b330c6b339366612aca9f669e7cefd8be0e608ea567b7fa2b35397566938",
-      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.9.0/rankup-bild.png",
-      "datum": "2026-09-19",
-      "notizen": "Neue Übung Counter-Strafe (Kategorie Bewegung): mit WASD laufen, sauber stoppen, im Stand treffen. Gegner peeken mit Anlauf wie in echten Duellen. Neue Übersicht: Kategorien lassen sich auf- und zuklappen, jede Übung steht kompakt in einer Zeile. Flüssiger mit fester Grenze von 240 FPS."
+      "beschreibung": "Aimtrainer mit Rängen von Eisen bis Radiant: Flicking, Tracking, Reaktion und Bewegung.",
+      "version": "0.10.0",
+      "paket": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.10.0/rankup-0.10.0.zip",
+      "groesse": 683368,
+      "sha256": "57113bd07bcd251960f528a21a334470ca7ac13b6727b41ccebd57cf31ef1d0a",
+      "bild": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/spiel-rankup-v0.10.0/rankup-bild.png",
+      "datum": "2026-09-23",
+      "notizen": "Tracking-Gegner laufen jetzt wie echte Gegner (weiches Anfahren, Stopp mit Gegentaste), Mittel ist schneller. Deine alten Tracking-Bestleistungen findest du als „Alte Version“ auf der Detailseite.\nCounter-Strafe: Laufen richtet sich nach deiner Blickrichtung, das Fadenkreuz bleibt fest, darunter zeigt ein grün/oranger Balken, ob du genau schießt. Gehen ist etwas schneller.\nNach der Pause geht es mit 3 Sekunden Countdown weiter.\nNeu: Ton beim Tracking (Einstellungen → Klang).\nDein Spielstand ist besser geschützt: Ist er beschädigt, wird er vorher gesichert."
     }
   ]
 }
