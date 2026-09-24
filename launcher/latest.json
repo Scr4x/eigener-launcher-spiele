@@ -1,11 +1,11 @@
 {
-  "version": "0.3.0",
-  "notes": "Spiele können jetzt ohne Bildraten-Bremse laufen (für schnelle Spiele wie RankUP): mehr FPS und deutlich weniger Verzögerung zwischen Maus und Bild.\nAndere Spiele laufen wie bisher.",
-  "pub_date": "2026-09-19T16:19:32.736Z",
+  "version": "0.4.0",
+  "notes": "Mehr Sicherheit: Spiele können nur noch ihre eigenen Dateien lesen, und die Spieleliste ist digital unterschrieben.\nDeine Daten sind besser geschützt: Beschädigte Dateien werden repariert statt überschrieben, abgebrochene Updates werden aufgeräumt.\nNeu: Knopf „Mehr“ an jeder Kachel (Ordner öffnen, Deinstallieren – auch ohne Internet). Fehlermeldungen bleiben stehen, bis du sie schließt. Der Menü-Knopf im Spiel erscheint nur noch ganz oben am Rand.",
+  "pub_date": "2026-09-24T11:32:13.567Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbzVGSi9hanNvTXFLeXBuQW5zdTlPL0Y3aEx0MWdiSy9IaExmeTFweEFGL0xkdnROSmM2a1lVdHUrYThLVXlBcU9WTm5DdWZnbkV6Q2ZMYzhHamJ5N1VPbFNTM3M2cndVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5ODMyNTk0CWZpbGU6RWlnZW5lci1MYXVuY2hlcl8wLjMuMF94NjQtc2V0dXAuZXhlCjltYjhsM0Jkc2d3d0VoK0pGNnVwaEtqS29DaVVEUUNBRnUvTmp4Qk1YcVZqaVZscGtEcEVzWTJjSzVZZ2tmaXNEaFo3cjhxMVBBOGsxVjhwVjlIc0N3PT0K",
-      "url": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/launcher-v0.3.0/Eigener-Launcher_0.3.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTbzVGSi9hanNvTW16eGpDR1FvR245TUhBVFRtUWZqeTlueGxESDN2Z3JTRjB2OU1RUHZLRGJrQ1JwVDJqVmJXNFgwdDNMYUlkWEU2UGMyMnZ1L0xDaUVBMlZTblRBd1FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwMjQ5NDAyCWZpbGU6RWlnZW5lci1MYXVuY2hlcl8wLjQuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC40LjAKNVpYQXo0TDNjU0FObUFOTmJkYTZ1K0JFT0JqT3EzRElNSGllbkM4VFVPcWFaRGs1ME9CSlRYRE4vTWs2LzJFQ3BDN2t0ME5SRHlwaUgvVWsrZ21URFE9PQo=",
+      "url": "https://github.com/Scr4x/eigener-launcher-spiele/releases/download/launcher-v0.4.0/Eigener-Launcher_0.4.0_x64-setup.exe"
     }
   }
 }
