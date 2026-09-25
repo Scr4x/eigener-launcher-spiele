@@ -5,11 +5,13 @@ Hier liegen die veröffentlichten Spiele und die Installationsdatei des **Eigene
 ## Für Freunde & Familie
 
 <!-- download -->
-**[Eigener-Launcher 0.4.0 herunterladen](https://github.com/Scr4x/eigener-launcher-spiele/releases/download/launcher-v0.4.0/Eigener-Launcher_0.4.0_x64-setup.exe)** (Windows, Installationsdatei)
+**[Eigener-Launcher 0.4.0 herunterladen](https://github.com/Scr4x/eigener-launcher-spiele/releases/latest/download/Eigener-Launcher-Setup.exe)** (Windows, Installationsdatei)
 <!-- /download -->
 
-1. Unter **Releases** (rechts auf dieser Seite) die neueste Datei
-   `Eigener-Launcher_…_x64-setup.exe` herunterladen und installieren.
+Anleitung mit Bildern und alle Spiele: **https://scr4x.github.io/eigener-launcher-spiele/**
+
+1. Über den Link oben `Eigener-Launcher-Setup.exe` herunterladen und installieren. Warnt Windows
+   („Der Computer wurde durch Windows geschützt“): **Weitere Informationen** → **Trotzdem ausführen**.
 2. Im Launcher unter **Entdecken** die Spiele auswählen und installieren.
 3. Updates meldet der Launcher selbst – ein Klick auf **Aktualisieren** genügt.
 

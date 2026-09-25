@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eigener-Launcher herunterladen</title>
+<!-- Nur für Freunde gedacht: Suchmaschinen sollen die Seite nicht aufnehmen -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Der Launcher für die Spiele aus unserer Runde: herunterladen, installieren, spielen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  /* Farben wie im Launcher (Code/src/style.css), damit die Seite nach dem Programm aussieht */
+  :root {
+    --grund: #14171c;
+    --flaeche: #1b1f26;
+    --flaeche-hoch: #232830;
+    --rand: #2e3440;
+    --text: #e6e9ef;
+    --leise: #9aa3b2;
+    --akzent: #6ea8fe;
+    --akzent-hover: #8bbaff;
+    --akzent-text: #0e1420;
+    --warn: #f0b85a;
+    /* Windows-SmartScreen, nur für die Nachbildung */
+    --win-blau: #0063b1;
+    --win-knopf: #2b85d0;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --grund: #f3f4f6;
+      --flaeche: #ffffff;
+      --flaeche-hoch: #f7f8fa;
+      --rand: #d7dbe2;
+      --text: #1a1e25;
+      --leise: #5a6272;
+      --akzent: #2f6fd6;
+      --akzent-hover: #245bb3;
+      --akzent-text: #ffffff;
+      --warn: #9a6200;
+      color-scheme: light;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--grund);
+    color: var(--text);
+    font-family: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 18px;
+    line-height: 1.55;
+  }
+  a { color: var(--akzent); text-underline-offset: 3px; }
+  a:hover { color: var(--akzent-hover); }
+  :focus-visible { outline: 3px solid var(--akzent); outline-offset: 3px; border-radius: 4px; }
+
+  .seite { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- Kopf ---------- */
+  .kopf { padding: clamp(48px, 12vh, 120px) 0 56px; }
+  h1 {
+    margin: 0;
+    font-size: clamp(52px, 13vw, 112px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+  }
+  h1 span { display: block; }
+  h1 span + span { color: var(--akzent); }
+  .kopf p { margin: 28px 0 0; max-width: 34em; font-size: 20px; color: var(--leise); }
+  .kopf p strong { color: var(--text); font-weight: 600; }
+
+  .download {
+    display: inline-flex; align-items: center; gap: 14px;
+    margin-top: 36px; padding: 18px 28px 18px 22px;
+    background: var(--akzent); color: var(--akzent-text);
+    font-size: 21px; font-weight: 600; text-decoration: none;
+    border-radius: 14px;
+    transition: background-color 120ms ease-out, transform 120ms ease-out;
+  }
+  .download:hover { background: var(--akzent-hover); color: var(--akzent-text); }
+  .download:active { transform: translateY(1px); }
+  .download svg { width: 26px; height: 26px; flex: none; }
+  .download-info { margin: 14px 0 0; font-size: 15px; color: var(--leise); }
+
+  /* ---------- Abschnitte ---------- */
+  section { padding: 56px 0; border-top: 1px solid var(--rand); }
+  h2 { margin: 0 0 8px; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; }
+  .einleitung { margin: 0 0 32px; color: var(--leise); }
+
+  /* ---------- Schritte ---------- */
+  .schritte { list-style: none; margin: 0; padding: 0; counter-reset: schritt; }
+  .schritte > li {
+    counter-increment: schritt;
+    position: relative;
+    padding: 0 0 40px 60px;
+  }
+  .schritte > li::before {
+    content: counter(schritt);
+    position: absolute; left: 0; top: -2px;
+    width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--flaeche-hoch); border: 1px solid var(--rand);
+    font-weight: 800; font-size: 19px;
+  }
+  .schritte > li:not(:last-child)::after {
+    content: ""; position: absolute; left: 19.5px; top: 46px; bottom: 6px;
+    width: 1px; background: var(--rand);
+  }
+  .schritte h3 { margin: 4px 0 6px; font-size: 21px; font-weight: 600; line-height: 1.3; }
+  .schritte p { margin: 0 0 12px; }
+  .schritte .klein { font-size: 16px; color: var(--leise); }
+  .taste {
+    font-weight: 600; white-space: nowrap;
+    padding: 1px 7px; border-radius: 6px;
+    background: var(--flaeche-hoch); border: 1px solid var(--rand);
+  }
+
+  /* ---------- Nachbildung: Windows SmartScreen ---------- */
+  .fenster {
+    margin: 18px 0 8px;
+    max-width: 460px;
+    background: var(--win-blau);
+    color: #fff;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-size: 14px; line-height: 1.45;
+    padding: 22px 22px 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    user-select: none;
+  }
+  .fenster-titel { font-size: 24px; font-weight: 300; line-height: 1.2; margin: 0 0 12px; }
+  .fenster p { margin: 0 0 10px; }
+  .fenster .angaben { margin: 12px 0 0; }
+  .fenster .angaben div { display: flex; gap: 16px; }
+  .fenster .angaben span:first-child { width: 88px; flex: none; }
+  .fenster-link { text-decoration: underline; }
+  .fenster-knoepfe { display: flex; justify-content: flex-end; gap: 8px; margin-top: 22px; }
+  .fenster-knopf {
+    min-width: 132px; padding: 5px 14px; text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+  }
+  .fenster-knopf.voll { background: var(--win-knopf); border-color: var(--win-knopf); }
+  .ziel { outline: 3px solid var(--warn); outline-offset: 4px; border-radius: 2px; }
+  .zeiger {
+    display: inline-block; margin-left: 10px; padding: 0 8px; border-radius: 4px;
+    background: var(--warn); color: #1a1406; font-weight: 700; font-size: 12px; text-decoration: none;
+  }
+  .nachbildung { font-size: 14px; color: var(--leise); margin: 0 0 12px; }
+
+  .warum {
+    margin: 18px 0 0; padding: 16px 18px;
+    background: var(--flaeche); border: 1px solid var(--rand); border-radius: 12px;
+    font-size: 16px;
+  }
+  .warum strong { font-weight: 600; }
+
+  /* ---------- Nachbildung: Karte im Launcher ---------- */
+  .karte-nachbau {
+    margin: 16px 0 8px; max-width: 360px;
+    display: grid; grid-template-columns: 96px 1fr; gap: 14px; align-items: center;
+    padding: 12px; background: var(--flaeche); border: 1px solid var(--rand); border-radius: 12px;
+    user-select: none;
+  }
+  .karte-nachbau img, .karte-nachbau .bildersatz {
+    width: 96px; height: 60px; object-fit: cover; border-radius: 8px; background: var(--flaeche-hoch);
+  }
+  .karte-nachbau b { display: block; font-weight: 600; }
+  .karte-nachbau .knopf-nachbau {
+    display: inline-block; margin-top: 6px; padding: 3px 12px; border-radius: 8px;
+    background: var(--akzent); color: var(--akzent-text); font-size: 14px; font-weight: 600;
+  }
+
+  /* ---------- Spiele ---------- */
+  .spiele { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+  .spiel { display: grid; grid-template-columns: 200px 1fr; gap: 22px; align-items: start; }
+  .spiel img {
+    width: 200px; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 12px;
+    background: var(--flaeche); border: 1px solid var(--rand); display: block;
+  }
+  .spiel h3 { margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; }
+  .spiel p { margin: 6px 0 0; }
+  .spiel .stand { font-size: 15px; color: var(--leise); }
+  .spiel details { margin-top: 10px; font-size: 16px; }
+  .spiel summary { cursor: pointer; color: var(--akzent); width: max-content; }
+  .spiel details p { white-space: pre-line; color: var(--leise); }
+  .hinweis-laden { color: var(--leise); margin: 0; }
+
+  /* ---------- Hilfe ---------- */
+  .hilfe details {
+    border: 1px solid var(--rand); border-radius: 12px; background: var(--flaeche);
+    margin-bottom: 12px;
+  }
+  .hilfe summary {
+    cursor: pointer; padding: 16px 18px; font-weight: 600; list-style: none;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  }
+  .hilfe summary::-webkit-details-marker { display: none; }
+  .hilfe summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--akzent); flex: none; }
+  .hilfe details[open] summary::after { content: "–"; }
+  .hilfe details[open] summary { border-bottom: 1px solid var(--rand); }
+  .hilfe .antwort { padding: 4px 18px 16px; }
+  .hilfe .antwort p { margin: 12px 0 0; }
+  code {
+    font-family: Consolas, "Cascadia Mono", monospace; font-size: 0.9em;
+    background: var(--flaeche-hoch); padding: 1px 6px; border-radius: 5px; overflow-wrap: anywhere;
+  }
+
+  footer { padding: 40px 0 64px; border-top: 1px solid var(--rand); font-size: 15px; color: var(--leise); }
+  footer p { margin: 0; }
+
+  @media (max-width: 560px) {
+    body { font-size: 17px; }
+    .kopf p { font-size: 18px; }
+    .download { width: 100%; justify-content: center; }
+    .schritte > li { padding-left: 52px; }
+    .spiel { grid-template-columns: 1fr; gap: 12px; }
+    .spiel img { width: 100%; }
+    .fenster-knoepfe { flex-direction: column; align-items: stretch; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="seite">
+
+  <header class="kopf">
+    <h1><span>Eigener-</span><span>Launcher</span></h1>
+    <p>Das Programm für die Spiele aus unserer Runde. <strong>Einmal installieren</strong>, danach kommen neue Spiele und Updates von selbst.</p>
+    <a class="download" id="download" href="https://github.com/Scr4x/eigener-launcher-spiele/releases/latest/download/Eigener-Launcher-Setup.exe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m6.5 10 5.5 5.5 5.5-5.5"/><path d="M4 20h16"/></svg>
+      Launcher herunterladen
+    </a>
+    <p class="download-info" id="download-info">Für Windows 10 und 11.</p>
+  </header>
+
+  <section aria-labelledby="t-installieren">
+    <h2 id="t-installieren">So installierst du ihn</h2>
+    <p class="einleitung">Dauert zwei Minuten. Windows warnt dabei einmal, das ist bei kleinen Programmen normal.</p>
+
+    <ol class="schritte">
+      <li>
+        <h3>Datei herunterladen</h3>
+        <p>Klick oben auf <span class="taste">Launcher herunterladen</span>. Du bekommst die Datei <code>Eigener-Launcher-Setup.exe</code>.</p>
+        <p class="klein">Meldet dein Browser, die Datei werde „nicht häufig heruntergeladen“: in der Download-Liste auf die drei Punkte bei der Datei klicken, dann <span class="taste">Beibehalten</span>. Fragt er noch einmal, auf <span class="taste">Mehr anzeigen</span> und <span class="taste">Trotzdem beibehalten</span>.</p>
+      </li>
+
+      <li>
+        <h3>Datei öffnen und auf „Weitere Informationen“ klicken</h3>
+        <p>Beim Öffnen erscheint ein blaues Fenster. Klick dort <strong>nicht</strong> auf „Nicht ausführen“, sondern auf den Text <span class="taste">Weitere Informationen</span>.</p>
+        <p class="nachbildung">Nachgebaut, so sieht es ungefähr aus:</p>
+        <div class="fenster" role="img" aria-label="Blaues Windows-Fenster „Der Computer wurde durch Windows geschützt“. Markiert ist der Text „Weitere Informationen“.">
+          <p class="fenster-titel">Der Computer wurde durch Windows geschützt</p>
+          <p>Von Microsoft Defender SmartScreen wurde der Start einer unbekannten App verhindert. Die Ausführung dieser App stellt ein potenzielles Risiko für den PC dar.</p>
+          <p><span class="fenster-link ziel">Weitere Informationen</span><span class="zeiger" aria-hidden="true">hier klicken</span></p>
+          <div class="fenster-knoepfe"><span class="fenster-knopf">Nicht ausführen</span></div>
+        </div>
+      </li>
+
+      <li>
+        <h3>„Trotzdem ausführen“ klicken</h3>
+        <p>Jetzt steht unten ein zweiter Knopf. Klick auf <span class="taste">Trotzdem ausführen</span>.</p>
+        <div class="fenster" role="img" aria-label="Dasselbe Fenster mit App-Name und „Unbekannter Herausgeber“. Markiert ist der Knopf „Trotzdem ausführen“.">
+          <p class="fenster-titel">Der Computer wurde durch Windows geschützt</p>
+          <p>Von Microsoft Defender SmartScreen wurde der Start einer unbekannten App verhindert. Die Ausführung dieser App stellt ein potenzielles Risiko für den PC dar.</p>
+          <div class="angaben">
+            <div><span>App:</span><span>Eigener-Launcher-Setup.exe</span></div>
+            <div><span>Herausgeber:</span><span>Unbekannter Herausgeber</span></div>
+          </div>
+          <div class="fenster-knoepfe">
+            <span class="fenster-knopf ziel">Trotzdem ausführen</span>
+            <span class="fenster-knopf voll">Nicht ausführen</span>
+          </div>
+        </div>
+        <div class="warum">
+          <strong>Warum warnt Windows?</strong> Windows kennt nur Programme, die bei Microsoft gegen Gebühr registriert sind.
+          Unser Launcher ist das nicht, deshalb steht dort „Unbekannter Herausgeber“. Updates des Launchers und die Spieleliste
+          sind mit einem eigenen Schlüssel unterschrieben, der Launcher prüft das bei jedem Update selbst.
+        </div>
+      </li>
+
+      <li>
+        <h3>Installieren</h3>
+        <p>Das Installationsprogramm ist auf Deutsch. Klick dich mit <span class="taste">Weiter</span> und <span class="taste">Installieren</span> durch und am Ende auf <span class="taste">Fertigstellen</span>. Administratorrechte brauchst du nicht.</p>
+      </li>
+
+      <li>
+        <h3>Spiele holen</h3>
+        <p>Im Launcher oben auf <span class="taste">Entdecken</span>, dann beim Spiel auf <span class="taste">Installieren</span>. Danach findest du es unter <span class="taste">Bibliothek</span>.</p>
+        <div class="karte-nachbau" id="karte-nachbau" role="img" aria-label="Spielkarte im Launcher mit dem Knopf „Installieren“">
+          <div class="bildersatz"></div>
+          <div><b>Ein Spiel</b><span class="knopf-nachbau">Installieren</span></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="t-spiele">
+    <h2 id="t-spiele">Diese Spiele gibt es</h2>
+    <p class="einleitung">Alle kostenlos und direkt im Launcher unter „Entdecken“.</p>
+    <ul class="spiele" id="spiele">
+      <li><p class="hinweis-laden">Spiele werden geladen …</p></li>
+    </ul>
+  </section>
+
+  <section class="hilfe" aria-labelledby="t-hilfe">
+    <h2 id="t-hilfe">Wenn etwas nicht klappt</h2>
+    <p class="einleitung">Die häufigsten Fälle. Hilft nichts davon, schreib in die Gruppe und schick ein Foto der Meldung.</p>
+
+    <details>
+      <summary>Beim Installieren eines Spiels steht „Zugriff verweigert (os error 5)“</summary>
+      <div class="antwort">
+        <p>Windows lässt den Launcher nicht in den Ordner schreiben, in dem die Spiele liegen. Das passiert oft im Ordner „Dokumente“, wenn der Ransomware-Schutz oder OneDrive aktiv ist.</p>
+        <p>So geht es: Im Launcher die <span class="taste">Einstellungen</span> öffnen und als Spieleordner einen Ordner außerhalb von Dokumente, Desktop und OneDrive wählen, zum Beispiel <code>C:\Users\DeinName\Spiele</code>. Dann das Spiel noch einmal installieren.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Im blauen Fenster gibt es keinen Knopf „Trotzdem ausführen“</summary>
+      <div class="antwort">
+        <p>Dann erlaubt dein PC grundsätzlich keine unbekannten Programme, etwa bei Schul- und Firmen-PCs oder wenn unter Windows 11 die „intelligente App-Steuerung“ eingeschaltet ist. In dem Fall lässt sich der Launcher leider nicht installieren. Melde dich in der Gruppe.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Wie bekomme ich Updates?</summary>
+      <div class="antwort">
+        <p>Der Launcher meldet sich selbst, wenn es eine neue Version gibt. Neue Spielversionen siehst du unter „Entdecken“ mit dem Knopf <span class="taste">Aktualisieren</span>. Deine Spielstände bleiben dabei erhalten.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Wie entferne ich den Launcher wieder?</summary>
+      <div class="antwort">
+        <p>Windows-Einstellungen, dann Apps, dann Installierte Apps, dort „Eigener-Launcher“ deinstallieren. Den Haken „Auch alle Spielstände löschen“ nur setzen, wenn du die Spielstände wirklich nicht mehr brauchst.</p>
+      </div>
+    </details>
+  </section>
+
+  <footer>
+    <p>Alle Dateien liegen öffentlich auf <a href="https://github.com/Scr4x/eigener-launcher-spiele">GitHub</a>.</p>
+  </footer>
+
+</div>
+
+<script>
+  // Spieleliste und Launcher-Version kommen live aus der öffentlichen Ablage,
+  // damit diese Seite nach dem Veröffentlichen nicht angepasst werden muss.
+  const ROH = "https://raw.githubusercontent.com/Scr4x/eigener-launcher-spiele/main/";
+  const datum = (iso) => {
+    const d = new Date(iso);
+    return isNaN(d) ? "" : d.toLocaleDateString("de-DE", { day: "numeric", month: "long", year: "numeric" });
+  };
+  const el = (tag, eigenschaften = {}, ...kinder) => {
+    const e = document.createElement(tag);
+    for (const [k, v] of Object.entries(eigenschaften)) e.setAttribute(k, v);
+    for (const k of kinder) if (k != null) e.append(k);
+    return e;
+  };
+
+  fetch(ROH + "launcher/latest.json", { cache: "no-store" })
+    .then((a) => (a.ok ? a.json() : Promise.reject()))
+    .then((l) => {
+      const info = document.getElementById("download-info");
+      info.textContent = `Für Windows 10 und 11. Version ${l.version}` + (l.pub_date ? ` vom ${datum(l.pub_date)}.` : ".");
+    })
+    .catch(() => {});
+
+  fetch(ROH + "katalog.json", { cache: "no-store" })
+    .then((a) => (a.ok ? a.json() : Promise.reject()))
+    .then((k) => {
+      const liste = document.getElementById("spiele");
+      liste.replaceChildren();
+      const spiele = [...(k.spiele || [])].sort((a, b) => a.titel.localeCompare(b.titel, "de"));
+      for (const s of spiele) {
+        const bild = s.bild ? el("img", { src: s.bild, alt: "", loading: "lazy", width: "200", height: "125" }) : el("div", { class: "bildersatz" });
+        const text = el("div", {},
+          el("h3", {}, s.titel),
+          s.beschreibung ? el("p", {}, s.beschreibung) : null,
+          el("p", { class: "stand" }, `Version ${s.version}` + (s.datum ? `, aktualisiert am ${datum(s.datum)}` : "")),
+          s.notizen ? el("details", {}, el("summary", {}, "Was ist neu?"), el("p", {}, s.notizen)) : null,
+        );
+        liste.append(el("li", { class: "spiel" }, bild, text));
+      }
+      // Die Beispielkarte in Schritt 5 zeigt ein echtes Spiel
+      const erstes = spiele.find((s) => s.bild);
+      if (erstes) {
+        const karte = document.getElementById("karte-nachbau");
+        karte.querySelector(".bildersatz").replaceWith(el("img", { src: erstes.bild, alt: "" }));
+        karte.querySelector("b").textContent = erstes.titel;
+      }
+    })
+    .catch(() => {
+      document.getElementById("spiele").replaceChildren(
+        el("li", {}, el("p", { class: "hinweis-laden" }, "Die Spieleliste lässt sich gerade nicht laden. Im Launcher unter „Entdecken“ siehst du alle Spiele.")),
+      );
+    });
+</script>
+</body>
+</html>
